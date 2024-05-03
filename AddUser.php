@@ -1,11 +1,11 @@
 <?php
 require_once "./MySqlOperation.php";
 
-/// フォームの値を取得
+/// 入力フォームの値を取得
 $name = $_POST["name"];
 $age = $_POST["age"];
 
-/// sql追加処理
+/// sqlレコードの追加
 $mySqlOperation = new MySqlOperation;
 $mySqlOperation->connect();
 $mySqlOperation->addSql($name, $age);
