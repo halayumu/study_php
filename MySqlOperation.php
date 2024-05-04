@@ -26,4 +26,20 @@ class MySqlOperation
       die('実行エラー: ' . $stmt->error);
     }
   }
+
+
+  /// レコード全件取得
+  public function allUserTable()
+  {
+    $tableName = "user";
+    $query = "SELECT * FROM {$tableName}";
+    $result = $this->mysqli->query($query);
+
+    // 結果セットからデータを取得し、配列に追加
+    while ($row = $result->fetch_assoc()) {
+      $allRecords[] = $row;
+    }
+
+    return $allRecords;
+  }
 }
