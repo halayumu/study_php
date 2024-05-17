@@ -12,6 +12,12 @@ $mySqlOperation->connect();
 /// sqlレコードの追加
 $mySqlOperation->addSql($name, $age);
 
+/// 受信画像の表示実装
+$image = $_FILES['image']['tmp_name'];
+
+$mySqlOperation->resizeImageToSquare($image);
+
+
 ?>
 
 <!DOCTYPE html>
